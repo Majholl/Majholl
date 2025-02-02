@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-from mainrobot.management.commands.dbinfo import db
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mainrobot.apps.MainrobotConfig',
+    'rest_framework',
+    'drf_yasg',
 
 ]
 
@@ -79,7 +81,7 @@ WSGI_APPLICATION = 'TeleBot.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': f'{db[0] if len(db) >=1 else "None"}',
+        'NAME': 'v2bot',
         'USER' : 'root',
         'HOST' : 'localhost',
         'PORT' : '3306',
@@ -133,3 +135,13 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+# rest framework api 
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+ 
+}

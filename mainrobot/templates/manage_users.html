@@ -1,0 +1,35 @@
+{% extends 'dashboard.html' %}
+{% load static %}
+
+
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'manageusers.css' %}">
+{% endblock %}
+
+
+
+{% block content %}
+<section>
+    <table id="tableusers">
+        <thead class="tbmainhead">
+            <tr class="headtb">
+                <th>first_name</th>
+                <th>user_id</th>
+                <th>user_wallet</th>
+            </tr>
+        </thead>
+        <tbody class="tbmainbody">
+                {% for i in users %}
+                <tr class="bodytb" onclick="window.location.href='/user/{{ i.id }}';" style="cursor: pointer;">
+                    <td>{{i.first_name}}</td>
+                    <td>{{i.user_id}}</td>
+                    <td>{{i.user_wallet}}</td>
+                </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+</section>
+
+
+{% endblock %}

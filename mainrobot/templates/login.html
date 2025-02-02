@@ -1,0 +1,40 @@
+{% load static %}
+
+{% block extra_css %}
+ <link rel="stylesheet" href="{% static 'login.css' %}">
+{% endblock  %}
+
+{% for message in messages %}
+    <p class="error-message">{{ message }}</p>
+{% endfor %}
+
+
+
+<form method="post">
+    {% csrf_token %}
+    <div class='bg-form'>
+        <h1>Login</h1>
+
+        <div class="input-box">
+            <input type="text" name="username" placeholder="UserName">
+            <i class="fa-solid fa-user"></i>
+        </div>
+
+        <div class="input-box">
+            <input type="password" name="password" placeholder="Password">  <!-- Note the type="password" and name="password" -->
+            <i class="fa-solid fa-lock"></i>
+        </div>
+
+        <div class="remember-forget">
+            <label><input type="checkbox" name="remember"> Remember Me</label>
+            <a href="#">رمز ورودم را فراموش کرده ام؟</a>
+        </div>
+
+        <button type="submit" class="btn">ورود</button>
+        <button type="submit" class="btn"><a href="/products">بازگشت</a>
+        <div class="register-link">
+            <p>حساب ندارید ؟<a href="#">:ثبت نام کنید</a></p>
+        </div>
+    </div>
+</form>
+

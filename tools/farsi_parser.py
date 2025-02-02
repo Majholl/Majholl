@@ -9,7 +9,7 @@ def parse_farsi(txt : str ):
     
     for txt_parse in txt_list:
         if txt_parse in farsi_list:  
-            print('yes') 
+            #print('yes') 
             return True
         
     return False

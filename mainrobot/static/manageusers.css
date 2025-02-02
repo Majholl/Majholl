@@ -1,0 +1,18 @@
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: aliceblue;
+    padding:25px;
+    direction: rtl;
+}
+
+
+div.all-users {
+    display: flex;
+    padding: 10px;
+    margin: 10px;  
+}
+
+
+

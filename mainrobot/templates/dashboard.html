@@ -1,0 +1,54 @@
+{% extends 'main.html' %}
+{% load static %}
+
+
+
+    
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'dashboard.css' %}">
+{% endblock %}
+
+
+<script src="https://kit.fontawesome.com/a57282237d.js" crossorigin="anonymous"></script>
+
+
+{% block content %}
+<section > 
+    <div class="top-menu-div">
+        <ul class="top-menu">
+            <li class="menu-object-6"><a href="{% url 'logout' %}">خروج</a></li>
+            <li class="menu-object-5"><a href="/dashboard/manageusers">مدیریت کاربران </a></li>
+            <li class="menu-object-4"><a href="/dashboard/manage-users1">مدیریت ادمین ها</a></li>
+            <li class="menu-object-3"><a href="/dashboard/manage-users2">مدیریت فروشگاه</a></li>
+            <li class="menu-object-2"><a href="/dashboard/manage-users3">مدیریت پنل</a></li>
+            <li class="menu-object-1"><a href="/dashboard/manage-users0">صفحه اصلی</a></li>
+        </ul>
+    </div>
+    <span class="sidebar-openclose" onclick="toggleMenu()">></span>
+
+
+
+    <div class="top-menu-div-2">
+        <div class="tmd2-inside-1"></div>
+        <div class="tmd2-inside-2"></div>
+        <div class="tmd2-inside-3"></div>
+
+    </div>
+</section>
+
+
+<script>
+    function toggleMenu(){
+        var menu = document.querySelector('.top-menu-div');
+        var sidebar = document.querySelector('.sidebar-openclose');
+        if (menu.style.display=='none'){
+            menu.style.display = 'block';
+            sidebar.innerHTML= '>'
+        } else {
+            menu.style.display = 'none';
+            sidebar.innerHTML = '<';
+        }
+    }
+</script>
+{% endblock %}
+
